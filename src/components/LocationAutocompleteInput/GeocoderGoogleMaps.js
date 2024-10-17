@@ -44,16 +44,17 @@ class GeocoderGoogleMaps {
    * only relevant for the `getPlaceDetails` function below.
    */
   getPlacePredictions(search, countryLimit) {
-    const limitCountriesMaybe = countryLimit
-      ? {
-          componentRestrictions: {
-            country: countryLimit,
-          },
-        }
-      : {};
+    const searchOptions = {
+      types: ['postal_code'], // Restrict to postal codes only
+      ...(countryLimit && {
+        componentRestrictions: {
+          country: countryLimit,
+        },
+      })
+    };
 
     return googleMapsUtil
-      .getPlacePredictions(search, this.getSessionToken(), limitCountriesMaybe)
+      .getPlacePredictions(search, this.getSessionToken(), searchOptions)
       .then(results => {
         return {
           search,

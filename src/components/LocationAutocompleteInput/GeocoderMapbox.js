@@ -104,6 +104,7 @@ class GeocoderMapbox {
         query: search,
         limit: 5,
         ...limitCountriesMaybe,
+        types: 'postcode',
         language: [locale],
       })
       .send()
