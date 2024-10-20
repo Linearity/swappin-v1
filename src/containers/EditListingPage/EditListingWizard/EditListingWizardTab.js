@@ -19,12 +19,14 @@ import EditListingLocationPanel from './EditListingLocationPanel/EditListingLoca
 import EditListingPhotosPanel from './EditListingPhotosPanel/EditListingPhotosPanel';
 import EditListingPricingPanel from './EditListingPricingPanel/EditListingPricingPanel';
 import EditListingPricingAndStockPanel from './EditListingPricingAndStockPanel/EditListingPricingAndStockPanel';
+import EditListingCustomAvailabilityPanel from './EditListingCustomAvailabilityPanel/EditListingCustomAvailabilityPanel';
 
 import css from './EditListingWizardTab.module.css';
 
 export const DETAILS = 'details';
 export const PRICING = 'pricing';
 export const PRICING_AND_STOCK = 'pricing-and-stock';
+export const CUSTOM_AVAILABILITY = 'extra-features';
 export const DELIVERY = 'delivery';
 export const LOCATION = 'location';
 export const AVAILABILITY = 'availability';
@@ -35,6 +37,7 @@ export const SUPPORTED_TABS = [
   DETAILS,
   PRICING,
   PRICING_AND_STOCK,
+  CUSTOM_AVAILABILITY,
   DELIVERY,
   LOCATION,
   AVAILABILITY,
@@ -248,6 +251,16 @@ const EditListingWizardTab = props => {
           images={images}
           onImageUpload={onImageUpload}
           onRemoveImage={onRemoveImage}
+        />
+      );
+    }
+    case CUSTOM_AVAILABILITY: {
+      return (
+        <EditListingCustomAvailabilityPanel
+          allExceptions={allExceptions}
+          onAddAvailabilityException={onAddAvailabilityException} 
+          onDeleteAvailabilityException={onDeleteAvailabilityException}
+          {...panelProps(CUSTOM_AVAILABILITY)}
         />
       );
     }
