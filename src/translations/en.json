@@ -328,6 +328,7 @@
   "EditListingCustomAvailabilityForm.startDateLabel": "Starts",
   "EditListingWizard.default-booking.new.savePricing": "Next: Availability",
   "EditListingWizard.default-booking.new.saveCustomAvailability": "Next: Photos",
+  "EditListingWizard.default-inquiry.new.saveCustomAvailability": "Next",
   "EditListingWizard.edit.saveCustomAvailability": "Save changes",
   "ListingPage.customAvailabilityTitle": "Availability",
   "EmailVerificationForm.finishAccountSetup": "We will need to send you email notifications. To allow this, please verify your email address {email}.",
